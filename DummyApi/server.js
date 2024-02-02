@@ -21,9 +21,8 @@ db.sequelize.sync()
 app.get("/", (req,res)=>{
     res.send("Api is working")
 })
-//*********** */
 app.use(express.static("Images"));
-//require("./app/router/dummyUserRoute")(app)
+require("./app/router/dummyUserRoute")(app)
 require("./app/router/employeeDetails.Route")(app)
 const documentRoute = require("./app/router/documentRout");
 app.use("/", documentRoute);
